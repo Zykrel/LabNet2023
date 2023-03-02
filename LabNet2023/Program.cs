@@ -11,8 +11,29 @@ namespace LabNet2023
         static void Main(string[] args)
 
         {
-            Console.WriteLine("Hello World!");
-            Console.ReadLine(); //Utilizo ReadLine para que no se cierre la consola.
+            List<cantidadPersonas> pasajeros = new List<cantidadPersonas>
+            {
+                new omnibus(30),
+                new omnibus(10),
+                new omnibus(20),
+                new omnibus(40),
+                new omnibus(28),
+
+                new Taxi(2),
+                new Taxi(3),
+                new Taxi(4),
+                new Taxi(2),
+                new Taxi(1)
+
+
+            };
+
+            foreach (var item in pasajeros)
+            {
+                Console.WriteLine(item.Avanzar());
+            }
+
+            Console.ReadLine();
         }
     }
 }
