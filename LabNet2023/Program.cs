@@ -11,13 +11,13 @@ namespace LabNet2023
         static void Main(string[] args)
 
         {
-            List<cantidadPersonas> pasajeros = new List<cantidadPersonas>
+            List<TransportePublico> pasajeros = new List<TransportePublico>
             {
-                new omnibus(30),
-                new omnibus(10),
-                new omnibus(20),
-                new omnibus(40),
-                new omnibus(28),
+                new Omnibus(30),
+                new Omnibus(10),
+                new Omnibus(20),
+                new Omnibus(40),
+                new Omnibus(28),
 
                 new Taxi(2),
                 new Taxi(3),

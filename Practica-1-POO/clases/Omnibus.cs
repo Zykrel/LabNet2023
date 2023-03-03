@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LabNet2023
+namespace Practica_1_POO
 {
     public class Omnibus : TransportePublico
     {
@@ -14,12 +14,17 @@ namespace LabNet2023
         }
         public override string Avanzar()
         {
-            return $"El omnibus tiene {pasajeros} pasajeros";
+            return "El omnibus esta avanzando";
         }
 
-        public override string Descripcion()
+        public override string Detenerse()
         {
-            throw new NotImplementedException();
+            return "El omnibus se detuvo";
+        }
+
+        public override string Mostrar()
+        {
+            return $"El omnibus tiene {base.Pasajeros} pasajeros";
         }
     }
 }

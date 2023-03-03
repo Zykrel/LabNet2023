@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace LabNet2023
 {
-    public abstract class cantidadPersonas
+    public abstract class TransportePublico
     {
         public int pasajeros { get; set; }
 
-        public cantidadPersonas(int pasajeros)
+        public TransportePublico(int pasajeros)
         { 
             this.pasajeros = pasajeros;
         }

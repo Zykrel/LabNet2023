@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LabNet2023
+namespace Practica_1_POO
 {
     public class Taxi : TransportePublico
     {
@@ -14,12 +14,17 @@ namespace LabNet2023
         }
         public override string Avanzar()
         {
-            return $"El taxi tiene {pasajeros} pasajeros";
+            return "El taxi esta avanzando";
         }
 
-        public override string Descripcion()
+        public override string Detenerse()
         {
-            throw new NotImplementedException();
+            return "El taxi se detuvo";
+        }
+
+        public override string Mostrar()
+        {
+            return $"El taxi tiene {base.Pasajeros} pasajeros";
         }
     }
 }
