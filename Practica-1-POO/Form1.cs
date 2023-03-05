@@ -49,5 +49,10 @@ namespace Practica_1_POO
             taxi_1.Value = 0; taxi_2.Value = 0; taxi_3.Value = 0; taxi_4.Value = 0; taxi_5.Value = 0;
             omnibus_1.Value = 0; omnibus_2.Value = 0; omnibus_3.Value = 0; omnibus_4.Value = 0; omnibus_5.Value = 0;
         }
+
+        private void taxi_1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

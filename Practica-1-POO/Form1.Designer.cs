@@ -123,6 +123,11 @@
             // taxi_2
             // 
             this.taxi_2.Location = new System.Drawing.Point(633, 193);
+            this.taxi_2.Maximum = new decimal(new int[] {
+            4,
+            0,
+            0,
+            0});
             this.taxi_2.Name = "taxi_2";
             this.taxi_2.Size = new System.Drawing.Size(120, 20);
             this.taxi_2.TabIndex = 12;
@@ -130,6 +135,11 @@
             // taxi_3
             // 
             this.taxi_3.Location = new System.Drawing.Point(633, 234);
+            this.taxi_3.Maximum = new decimal(new int[] {
+            4,
+            0,
+            0,
+            0});
             this.taxi_3.Name = "taxi_3";
             this.taxi_3.Size = new System.Drawing.Size(120, 20);
             this.taxi_3.TabIndex = 11;
@@ -137,6 +147,11 @@
             // taxi_4
             // 
             this.taxi_4.Location = new System.Drawing.Point(633, 275);
+            this.taxi_4.Maximum = new decimal(new int[] {
+            4,
+            0,
+            0,
+            0});
             this.taxi_4.Name = "taxi_4";
             this.taxi_4.Size = new System.Drawing.Size(120, 20);
             this.taxi_4.TabIndex = 10;
@@ -144,6 +159,11 @@
             // taxi_5
             // 
             this.taxi_5.Location = new System.Drawing.Point(633, 316);
+            this.taxi_5.Maximum = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
             this.taxi_5.Name = "taxi_5";
             this.taxi_5.Size = new System.Drawing.Size(120, 20);
             this.taxi_5.TabIndex = 9;
@@ -151,9 +171,15 @@
             // taxi_1
             // 
             this.taxi_1.Location = new System.Drawing.Point(633, 152);
+            this.taxi_1.Maximum = new decimal(new int[] {
+            4,
+            0,
+            0,
+            0});
             this.taxi_1.Name = "taxi_1";
             this.taxi_1.Size = new System.Drawing.Size(120, 20);
             this.taxi_1.TabIndex = 8;
+            this.taxi_1.ValueChanged += new System.EventHandler(this.taxi_1_ValueChanged);
             // 
             // enviar_button
             // 
