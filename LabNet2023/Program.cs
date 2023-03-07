@@ -11,12 +11,12 @@ namespace LabNet2023
         static void Main(string[] args)
 
         {
-            Division metodo = new Division();
+            Division division = new Division();
             //Ejercicio 1
             Console.WriteLine(" EJERCICIO 1: ");
             Console.Write("Ingrese un numero: ");
             int numero = Convert.ToInt32(Console.ReadLine());
-            metodo.ExceptionByZero(numero);
+            division.ExceptionByZero(numero);
             
             //Ejercicio 2
             Console.WriteLine("\n EJERCICIO 2: ");
@@ -24,7 +24,7 @@ namespace LabNet2023
             string numero1 = (Console.ReadLine());
             Console.Write("Ingrese otro numero: ");
             string numero2 = (Console.ReadLine());
-            double resultado = metodo.ExceptionByZero2(numero1, numero2);
+            double resultado = division.ExceptionByZero2(numero1, numero2);
 
 
             //Ejercicio 3
