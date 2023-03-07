@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LabNet2023
 {
-    public class Logica
+    public class Logic
     {
 
         // 3) Realizar un método en una clase “Logic”, llamado desde la 
@@ -15,18 +15,9 @@ namespace LabNet2023
         // Deberá mostrar el mensaje de la excepción y el tipo de la 
         // excepción.
 
-        public bool fueraRango()
+        public void FueraRango()
         {
-            bool retorno = false;
-            int num = 5;
-            int[] arr = new int[] { 4, 8, 10 };
-
-            for (int index = 0; index <= num; index++)
-            {
-                Console.WriteLine(arr[index]);
-                retorno = true;
-            }
-            return retorno;
+            throw new IndexOutOfRangeException();
         }
 
 
@@ -41,18 +32,10 @@ namespace LabNet2023
         //mensaje al comienzo del mensaje de la clase base. Mostrar 
         //el mensaje de la excepción en una caja de texto.
 
-        public bool fueraRango2()
+        public void LanzarException()
         {
-            int num = 2;
-            int[] arr = new int[] { 4, 8, 10 };
-
-            for (int index = 0; index <= num; index++)
-            {
-                Console.WriteLine(arr[index]);
-                
-            }
-            throw new LogicException("excepcion persinalizada");
-            
+            throw new CustomException("Mensaje personalizado");
+            //throw new LogicaException();
         }
 
     }

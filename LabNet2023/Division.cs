@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace LabNet2023
 {
-    public class Metodos
+    public class Division
     {   
         //1) Realizar una método que al ingresar un valor genere una simple excepción 
         //al intentar hacer una división por cero.
@@ -17,12 +17,11 @@ namespace LabNet2023
 
 
 
-        public bool DivisionPorCero(int num)
+        public void ExceptionByZero(int num)
         {
-            bool retorna = false;
             try
             {
-                Console.WriteLine(num / 0);
+                Console.WriteLine(20 / num);
             }
             catch(DivideByZeroException ex)
             { 
@@ -32,7 +31,6 @@ namespace LabNet2023
             { 
                 Console.WriteLine("Se termino la operacion"); 
             }
-            return retorna;
         }
 
          
@@ -49,30 +47,29 @@ namespace LabNet2023
          //  una letra o no ingreso nada!”.
          
 
-        public bool DivisionPorCero2(int num1, int num2)
+        public double ExceptionByZero2(string num1, string num2)
         {
-            bool retorna = false;
+            double resultado = 0;
             try
             {
-                Console.WriteLine(num1 / num2);
-                retorna= true;
+                int numero1 = Convert.ToInt32(num1);
+                int numero2 = Convert.ToInt32(num2);
+                resultado = numero1 / numero2;
             }
-            catch(DivideByZeroException ex)
+            catch(DivideByZeroException e)
             {
-
-                Console.WriteLine("Ni Einstein hubiera hecho esta división");
-                
+                Console.WriteLine("Intentaste dividir por el saldo de mi cuenta bancaria :( " + e.Message);             
             }
             catch(Exception e)
             {
-                Console.WriteLine("Dato ingresado no valido");
+                Console.WriteLine("Seguro Ingreso una letra o no ingreso nada");
             }
             finally
             {
                 Console.WriteLine("Termino la operacion");
 
             }
-            return retorna;
+            return resultado;
         }
 
 

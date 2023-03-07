@@ -43,9 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Logica.cs" />
-    <Compile Include="LogicaExepcion.cs" />
-    <Compile Include="Metodos.cs" />
+    <Compile Include="Logic.cs" />
+    <Compile Include="CustomException.cs" />
+    <Compile Include="Division.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

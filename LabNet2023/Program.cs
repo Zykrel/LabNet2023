@@ -11,27 +11,28 @@ namespace LabNet2023
         static void Main(string[] args)
 
         {
-            Metodos metodo = new Metodos();
+            Division metodo = new Division();
             //Ejercicio 1
             Console.WriteLine(" EJERCICIO 1: ");
             Console.Write("Ingrese un numero: ");
             int numero = Convert.ToInt32(Console.ReadLine());
-            metodo.DivisionPorCero(numero);
+            metodo.ExceptionByZero(numero);
             
             //Ejercicio 2
-            Console.WriteLine(" EJERCICIO 2: ");
+            Console.WriteLine("\n EJERCICIO 2: ");
             Console.Write("Ingrese un numero: ");
-            int numero1 = Convert.ToInt32(Console.ReadLine());
+            string numero1 = (Console.ReadLine());
             Console.Write("Ingrese otro numero: ");
-            int numero2 = Convert.ToInt32(Console.ReadLine());
-            metodo.DivisionPorCero2(numero1, numero2);
+            string numero2 = (Console.ReadLine());
+            double resultado = metodo.ExceptionByZero2(numero1, numero2);
+
 
             //Ejercicio 3
-            Console.WriteLine(" EJERCICIO 3: ");
+            Console.WriteLine("\n EJERCICIO 3: ");
             try
             {
-                Logica logica = new Logica();
-                logica.fueraRango();
+                Logic logica = new Logic();
+                logica.FueraRango();
             }
             catch (Exception e)
             {
@@ -40,16 +41,15 @@ namespace LabNet2023
             }
 
             //Ejercicio 4
-            Console.WriteLine(" EJERCICIO 4: ");
+            Console.WriteLine("\n EJERCICIO 4: ");
             try
             {
-                Logica logica = new Logica();
-                logica.fueraRango2();
+                Logic logica = new Logic();
+                logica.LanzarException();
             }
-            catch (LogicException e)
+            catch (CustomException e)
             {
                 Console.WriteLine(e.Message);
-                Console.WriteLine(e.GetType());
             }
 
             Console.ReadLine();
