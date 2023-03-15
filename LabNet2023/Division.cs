@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace LabNet2023
 {
     public class Division
-    {   
+    {
         //1) Realizar una método que al ingresar un valor genere una simple excepción 
         //al intentar hacer una división por cero.
         //Esta misma excepción deberá ser capturada, 
@@ -17,20 +17,23 @@ namespace LabNet2023
 
 
 
-        public void ExceptionByZero(int num)
+        public string ExceptionByZero(int num)
         {
+            string resultado = "";
+
             try
             {
-                Console.WriteLine(20 / num);
+               resultado = (num / 0).ToString();
             }
             catch(DivideByZeroException ex)
             { 
-                Console.WriteLine(ex.Message);
+                resultado = (ex.Message);
             }
             finally 
             { 
-                Console.WriteLine("Se termino la operacion"); 
+               resultado = resultado + "\n" + "Se termino la operacion";
             }
+                return resultado;            
         }
 
          
@@ -49,25 +52,20 @@ namespace LabNet2023
 
         public double ExceptionByZero2(string num1, string num2)
         {
-            double resultado = 0;
+            double resultado = 0.0;
             try
             {
-                int numero1 = Convert.ToInt32(num1);
-                int numero2 = Convert.ToInt32(num2);
+                double numero1 = Convert.ToDouble(num1);
+                double numero2 = Convert.ToDouble(num2);
                 resultado = numero1 / numero2;
             }
             catch(DivideByZeroException e)
             {
-                Console.WriteLine("Intentaste dividir por el saldo de mi cuenta bancaria :( " + e.Message);             
+                throw new Exception("Intentaste dividir por el saldo de mi cuenta bancaria :( " + e.Message);
             }
             catch(Exception e)
             {
-                Console.WriteLine("Seguro Ingreso una letra o no ingreso nada");
-            }
-            finally
-            {
-                Console.WriteLine("Termino la operacion");
-
+                throw new Exception("Seguro Ingreso una letra o no ingreso nada");
             }
             return resultado;
         }

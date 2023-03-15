@@ -35,7 +35,6 @@ namespace LabNet2023
         public void LanzarException()
         {
             throw new CustomException("Mensaje personalizado");
-            //throw new LogicaException();
         }
 
     }
