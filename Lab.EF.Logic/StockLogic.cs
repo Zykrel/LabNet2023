@@ -4,14 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LabNet2023
+namespace Lab.EF.Logic
 {
-    internal class Program
+    internal class StockLogic
     {
-        static void Main(string[] args)
-
-        {
-
-        }
     }
 }
