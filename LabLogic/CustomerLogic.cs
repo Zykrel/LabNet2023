@@ -1,5 +1,4 @@
-﻿using Entities;
-using Lab.EF.Data2;
+﻿using Lab.EF.Data2;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -66,8 +65,9 @@ namespace LabLogic
 
         // 7. Query para devolver Join entre Customers y Orders donde los customers sean de la Región WA y la fecha de orden sea mayor a 1/1/1997.
 
-        public List<CustomersOrders> ObtenerJoinOrders() 
+        public List<string> ObtenerJoinOrders() 
         {
+            List<string> listaJ = new List<string>();
             var query = from c
                         in _northwindcontext.Customers
                         join o
@@ -75,15 +75,20 @@ namespace LabLogic
                         on c.CustomerID equals o.CustomerID
                         where c.Region == "WA"
                         && o.OrderDate > new DateTime(1997, 01, 01)
-                        select new CustomersOrders
-                        (
-                            c.CustomerID,
-                            c.Region,
-                            o.OrderID,
-                            o.OrderDate
-                        );
-                                
-            return query.ToList();
+                        select new
+                        {
+                           customerID = c.CustomerID,
+                           region =  c.Region,
+                           orderID = o.OrderID,
+                           orderDate = o.OrderDate
+                        };
+
+            foreach (var o in query.ToList() ) 
+            { 
+                listaJ.Add($"Customers: {o.customerID} Order ID: {o.orderID} Fecha de order: {o.orderDate}" );
+            }
+
+            return listaJ;
         }
 
         // 8. Query para devolver los primeros 3 Customers de la  Región WA
@@ -95,10 +100,25 @@ namespace LabLogic
 
 
         //TODO: 13.Query para devolver los customer con la cantidad de ordenes asociadas
-        
-        //public List<Customers> CantidadDeOrdenesAsociadas() 
-        //{ 
-        //    return
-        //}
+
+        public List<string> CantidadDeOrdenesAsociadas()
+        {
+            List<string> lista = new List<string>();
+            var customers = _northwindcontext.Customers.Select(c => new
+            {
+                nombreCustomers = c.ContactName,
+                orders = c.Orders
+
+            }).ToList();
+            string cantidadDeOrdenesAsociadas = "";
+            foreach ( var c in customers )
+            {
+                cantidadDeOrdenesAsociadas = $"Customer: {c.nombreCustomers} --- Cantidad de ordenes: {c.orders.Count()}";
+                lista.Add(cantidadDeOrdenesAsociadas);
+
+            }
+            return lista;
+
+        }
     }
 }

@@ -76,7 +76,7 @@ namespace LabLogic
                 {
                     listaP+= $" {p.ProductName}. ";
                 }
-                lista.Add($"{categoriaYproductos} - Productos: {listaP}");
+                lista.Add($"{categoriaYproductos} \n Productos: {listaP}");
             }
             return lista;
 
