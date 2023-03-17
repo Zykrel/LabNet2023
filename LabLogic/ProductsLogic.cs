@@ -56,7 +56,31 @@ namespace LabLogic
 
         //11. Query para devolver las distintas categorías asociadas a los productos
 
-        public 
+        public List<string> ObtenerProductosYCategorias()
+        {
+            List<string> lista = new List<string>();
+            var categorias = _northwindcontext.Categories.Select(c => new
+            {
+                nombreCategoria = c.CategoryName,
+                categoriaID = c.CategoryID,
+                productos = c.Products
+            }).ToList();
+            
+            string listaP = "";
+            string categoriaYproductos = "";
+            foreach (var c in categorias)
+            {
+                 listaP = "";
+                 categoriaYproductos = $"Categoria: {c.nombreCategoria} ID: {c.categoriaID}";
+                foreach (var p in c.productos)
+                {
+                    listaP+= $" {p.ProductName}. ";
+                }
+                lista.Add($"{categoriaYproductos} - Productos: {listaP}");
+            }
+            return lista;
+
+        }
 
         //12. Query para devolver el primer elemento de una lista de productos
 

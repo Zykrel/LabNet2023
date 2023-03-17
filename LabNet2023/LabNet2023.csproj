@@ -57,5 +57,15 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Entities\Entities.csproj">
+      <Project>{CDD0A1C7-96CB-4668-BA10-02E5DCB2E97F}</Project>
+      <Name>Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LabLogic\LabLogic.csproj">
+      <Project>{47107D30-A518-47E8-97D5-241B54C22110}</Project>
+      <Name>LabLogic</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

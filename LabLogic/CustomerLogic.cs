@@ -12,13 +12,24 @@ namespace LabLogic
     {
         // 1.Query para devolver objeto customer
 
-         public Customers ObtenerCustomer(string id)
+
+        //Devuelvo Customer por ID
+         public Customers ObtenerCustomerPorID(string id)
         {
             var query = from c 
                         in _northwindcontext.Customers
                         where c.CustomerID == id
                         select c;
             return query.Single();
+        }
+
+        //Devuelvo el primero
+        public Customers ObtenerCustomer()
+        {
+            var query = from c
+                        in _northwindcontext.Customers                        
+                        select c;
+            return query.FirstOrDefault();
         }
 
         //4. Query para devolver todos los customers de la Región WA
@@ -85,9 +96,9 @@ namespace LabLogic
 
         //TODO: 13.Query para devolver los customer con la cantidad de ordenes asociadas
         
-        public List<Customers> CantidadDeOrdenesAsociadas() 
-        { 
-            return
-        }
+        //public List<Customers> CantidadDeOrdenesAsociadas() 
+        //{ 
+        //    return
+        //}
     }
 }
