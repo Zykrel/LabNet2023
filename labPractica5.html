@@ -11,16 +11,13 @@
     <div class="container text-center">
         <div class="row">
             <div class="col-12 mt-5">
-                <h1>Juego de adivinar un número</h1>
+                <h1>Juego de adivinar el número</h1>
             </div>
         </div>
         <div class="row">
-            <div class="col-12 mt-3">
-                <p>Este juego va a calcular un puntaje y nos va a marcar cual fue el puntaje más alto que obtuvimos en
-                    cada ronda.
-                    Si adivinamos el número ganamos, si no adivinamos podemos volver a intentar y si nuestro puntaje
-                    llega a 0
-                    perdemos.</p>
+            <div class="col-12">
+                <p>Adivnie el numero secreto para ganar!!! <br />
+                    Hay una cantidad limitada de intentos pero si el puntaje llega a 0 se Pierde :(.</p>
             </div>
         </div>
         <div class="row">
@@ -31,13 +28,13 @@
         <div class="row">
             <div class="col-12 mt-4">
                 <input type="number" id="numero" name="numero" min="1" max="20">
+                <p id="puntaje"></p>
+                <p id="resultado"></p>
             </div>
         </div>
         <div class="row">
             <div class="col-12 mt-3">
-                <button onclick="adivinarNumero()">Adivinar</button>
-                <p id="resultado"></p>
-                <p id="puntaje"></p>
+                <button type="button" class="btn btn-outline-primary" onclick="adivinarNumero()">Adivinar</button>
             </div>
         </div>
 </body>
