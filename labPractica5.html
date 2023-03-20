@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Juego de adivinar un número</title>
+</head>
+
+<body>
+    <h1>Juego de adivinar un número</h1>
+    <p>Este juego va a calcular un puntaje y nos va a marcar cual fue el puntaje más alto que obtuvimos en cada ronda.
+        Si adivinamos el número ganamos, si no adivinamos podemos volver a intentar y si nuestro puntaje llega a 0
+        perdemos.</p>
+    <label id="numero">Ingresa un número entre 1 y 10:</label>
+    <input type="number" id="numero" name="numero" min="1" max="10">
+    <button onclick="adivinarNumero()">Adivinar</button>
+    <p id="resultado"></p>
+    <p id="puntaje"></p>
+</body>
+<script src="/js/logica.js"></script>
+</html>
