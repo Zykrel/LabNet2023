@@ -11,7 +11,7 @@ const adivinarNumero = () => {
     let numeroIngresado = parseInt(document.getElementById("numero").value);
 
     if (numeroIngresado == numeroAleatorio) {
-        document.getElementById("resultado").innerHTML = "¡Ganaste!";
+        document.getElementById("resultado").innerHTML = "¡Ganaste! ---- Para continuar elija otro numero";
         puntajeA += puntajeMaximo;
         if (puntajeA > puntajeMaximo) {
             puntajeMaximo = puntajeA;
