@@ -1,14 +1,22 @@
-body {
-    background-color: #f3f3f3;
-}
+       html {
+           min-height: 100%;
+           position: relative;
+       }
 
-#mensaje {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-}
+       body {
+           margin: 0;
+           margin-bottom: 40px;
+           background-color: #f3f3f3;
 
-input[type="number"] {
-    padding: 1em;
-    font-size: 20px;
-    border-radius: 30%;
-    border: 5px solid #000000;
-}
+       }
+
+       #mensaje {
+           font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+       }
+
+       input[type="number"] {
+           padding: 1em;
+           font-size: 20px;
+           border-radius: 30%;
+           border: 5px solid #000000;
+       }
