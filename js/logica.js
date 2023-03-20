@@ -1,7 +1,7 @@
 let puntajeA = 10;
 let puntajeMaximo = localStorage.getItem("Puntaje Maximo") ? parseInt(localStorage.getItem("Puntaje Maximo")) : 0;
 let numeroAleatorio = Math.floor(Math.random() * 20) + 1;
-
+document.getElementById("puntaje").innerHTML = "Puntaje: " + puntajeA + " - Puntaje máximo: " + puntajeMaximo;
 const adivinarNumero = () => {
     let numero = parseInt(document.getElementById("numero").value);
 
@@ -31,7 +31,7 @@ const adivinarNumero = () => {
             cambiarNumeroA();
 
         }
-        document.getElementById("puntaje").innerHTML = "Puntaje actual: " + puntajeA + " - Puntaje máximo: " + puntajeMaximo;
+        document.getElementById("puntaje").innerHTML = "Puntaje: " + puntajeA + " - Puntaje máximo: " + puntajeMaximo;
     } else {
         document.getElementById("resultado").innerHTML = `No adivinaste, intenta de nuevo. <br/> Pista: El número es mayor al ingresado`;
         puntajeA -= 1;
@@ -61,6 +61,7 @@ const reiniciar = () => {
     document.getElementById("resultado").innerHTML = "";
     document.getElementById("numero").value = "";
     document.getElementById("mensaje").innerHTML = ``;
+    document.getElementById("puntaje").innerHTML = "Puntaje: " + puntajeA + " - Puntaje máximo: " + puntajeMaximo;
 }
 
 const botonA = document.querySelector('#botonA')
