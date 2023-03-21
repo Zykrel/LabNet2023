@@ -26,7 +26,7 @@ const adivinarNumero = () => {
         document.getElementById("resultado").innerHTML = `No adivinaste, intenta de nuevo. <br/> Pista: El número es menor al ingresado `;
         puntajeA -= 1;
         if (puntajeA == 0) {
-            document.getElementById("resultado").innerHTML = `Perdiste <br/> El numero era: ${numeroAleatorio} <br/> <br/> <img src="../../img/lose.gif"/>`;
+            document.getElementById("resultado").innerHTML = `Perdiste <br/> El numero era: ${numeroAleatorio} <br/> <br/> <img src="./../img/lose.gif"/>`;
             puntajeA = 10;
             cambiarNumeroA();
 
@@ -36,7 +36,7 @@ const adivinarNumero = () => {
         document.getElementById("resultado").innerHTML = `No adivinaste, intenta de nuevo. <br/> Pista: El número es mayor al ingresado`;
         puntajeA -= 1;
         if (puntajeA === 0) {
-            document.getElementById("resultado").innerHTML = `Perdiste <br/> El numero era: ${numeroAleatorio} <br/> <br/> <img src="../../img/lose2.gif"/>`;
+            document.getElementById("resultado").innerHTML = `Perdiste <br/> El numero era: ${numeroAleatorio} <br/> <br/> <img src="./../img/lose2.gif"/>`;
             puntajeA = 10;
             botonA = document.querySelector('#botonA').innerHTML = "reintentar"
             cambiarNumeroA();
