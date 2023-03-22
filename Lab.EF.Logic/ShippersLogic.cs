@@ -23,6 +23,7 @@ namespace Lab.EF.Logic
             _northwindcontext.SaveChanges();
         }
 
+
         public void Borrar(int id) 
         {
             Shippers companiaAEliminar = _northwindcontext.Shippers.First(s => s.ShipperID == id);

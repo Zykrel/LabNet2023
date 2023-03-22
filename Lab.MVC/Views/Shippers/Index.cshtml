@@ -1,0 +1,49 @@
+﻿@model  List<Lab.MVC.Models.ShippersView>
+@{
+    ViewBag.Title = "Shippers";
+}
+
+<h1 class="my-3">Lista de Shippers</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                ID
+            </th>
+            <th>
+                Nombre de Compañia
+            </th>
+            <th>
+                Eliminar
+            </th>
+            <th>
+                Editar
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var shipper in Model)
+        {
+            <tr>
+                <td>
+                    @shipper.ID
+                </td>
+                <td>
+                    @shipper.companyName
+                </td>
+                <td>
+                    @Html.ActionLink("Eliminar", "Delete", new { id = shipper.ID })
+                </td>
+                <td>
+                    @Html.ActionLink("Editar", "Update", "Shippers")
+                </td>
+            </tr>
+
+        }
+    </tbody>
+</table>
+<div class="btn btn-outline-info">
+    @Html.ActionLink("Agregar Shipper", "Insert", "Shippers")
+</div>
+
+

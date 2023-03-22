@@ -1,0 +1,18 @@
+﻿@model  Lab.MVC.Models.ShippersView
+
+@{
+    ViewBag.Title = "Update Company";
+}
+
+
+<h1 class="text-center mb-3">Agregar Compañia</h1>
+
+@using (Html.BeginForm("Update", "Shippers", FormMethod.Post))
+{
+    <div class="mx-4 mt-5">
+        <label>Nombre de Compañia:  </label> @Html.TextBoxFor(r => r.companyName)
+        <input type="submit" class=" btn btn-primary-success mx-4" value="Subir cambios" />
+
+    </div>
+
+}
