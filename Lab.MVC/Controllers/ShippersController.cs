@@ -63,24 +63,19 @@ namespace Lab.MVC.Controllers
         {
             try
             {
-                if (ModelState.IsValid) 
-                {
-                    Shippers shipperEntity = new Shippers { ShipperID = shippersView.ID, CompanyName = shippersView.companyName, Phone = shippersView.phone};
-                    Console.WriteLine(shipperEntity);
+                    Shippers shipperEntity = new Shippers { ShipperID = shippersView.ID, CompanyName = shippersView.companyName, Phone = shippersView.phone };
                     sLogic.InsertarData(shipperEntity);
                     return RedirectToAction("Index");
 
-                }
-                else
-                {
-                    return View(shippersView);
-                }
-        }
+            }catch(Exception) 
+            { 
             
-            catch (Exception)
-            {
-                return RedirectToAction("Index", "Error");
+                    return View(shippersView);
             }
+
+              
+
+         
         }
 
         public ActionResult Delete(int shippersId)

@@ -1,7 +1,7 @@
 ﻿@model  Lab.MVC.Models.ShippersView
 
 @{
-    ViewBag.Title = "Insertar Company";
+    ViewBag.Title = "Insertar Compañia";
 }
 
 <h1 class="text-center mb-3">Agregar Compañia</h1>
@@ -9,11 +9,11 @@
 @using (Html.BeginForm("Insert", "Shippers", FormMethod.Post))
 {
     <div class="mx-4 mt-5">
-        <label>Nombre de Compañia:  </label> @Html.TextBoxFor(sv => sv.companyName)@Html.ValidationMessageFor(sv => sv.companyName)
-        <label>Telefono:  </label> @Html.TextBoxFor(sv => sv.phone)@Html.ValidationMessageFor(sv => sv.phone)
         @Html.HiddenFor(sv => sv.ID)
+        <label>Nombre de Compañia:  </label> @Html.TextBoxFor(sv => sv.companyName)@Html.ValidationMessageFor(sv => sv.companyName) 
+        <label>Telefono:  </label> @Html.TextBoxFor(sv => sv.phone)@Html.ValidationMessageFor(sv => sv.phone)
         <input type="submit" class=" btn btn-outline-success mx-4" value="Subir cambios" />
-        
+
 
     </div>
 
