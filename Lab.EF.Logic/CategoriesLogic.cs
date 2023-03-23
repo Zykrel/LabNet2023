@@ -14,5 +14,6 @@ namespace Lab.EF.Logic
         {
             return _northwindcontext.Categories.ToList();
         }
+
     }
 }

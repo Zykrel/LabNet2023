@@ -9,8 +9,11 @@
 @using (Html.BeginForm("Insert", "Shippers", FormMethod.Post))
 {
     <div class="mx-4 mt-5">
-        <label>Nombre de Compañia:  </label> @Html.TextBoxFor(r => r.companyName)
+        <label>Nombre de Compañia:  </label> @Html.TextBoxFor(sv => sv.companyName)@Html.ValidationMessageFor(sv => sv.companyName)
+        <label>Telefono:  </label> @Html.TextBoxFor(sv => sv.phone)@Html.ValidationMessageFor(sv => sv.phone)
+        @Html.HiddenFor(sv => sv.ID)
         <input type="submit" class=" btn btn-outline-success mx-4" value="Subir cambios" />
+        
 
     </div>
 

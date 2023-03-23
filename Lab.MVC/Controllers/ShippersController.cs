@@ -11,8 +11,11 @@ namespace Lab.MVC.Controllers
 {
     public class ShippersController : Controller
     {
+        OrdersLogic orderLogic = new OrdersLogic();
 
         ShippersLogic sLogic = new ShippersLogic();
+
+
 
         // GET: Shippers
 
@@ -26,6 +29,7 @@ namespace Lab.MVC.Controllers
             {
                 ID = s.ShipperID,
                 companyName= s.CompanyName,
+                phone = s.Phone,
             }).ToList();
 
 
@@ -33,10 +37,25 @@ namespace Lab.MVC.Controllers
             return View(sView);
         }
 
-        public ActionResult Insert()
+        public ActionResult Insert(int shippersId = 0)
         {
+            if(shippersId == 0)
+            {
+                return View();
 
-            return View();
+            }
+            else 
+            {
+                Shippers shipperU = sLogic.ObtenerShipperPorId(shippersId);
+                if (shipperU != null)
+                {
+                    ShippersView shipperView = new ShippersView { ID = shipperU.ShipperID, companyName = shipperU.CompanyName, phone = shipperU.Phone };
+
+                    return View(shipperView);
+                }
+
+                return RedirectToAction("Index");
+            }
         }
 
         [HttpPost]
@@ -44,12 +63,18 @@ namespace Lab.MVC.Controllers
         {
             try
             {
+                if (ModelState.IsValid) 
+                {
+                    Shippers shipperEntity = new Shippers { ShipperID = shippersView.ID, CompanyName = shippersView.companyName, Phone = shippersView.phone};
+                    Console.WriteLine(shipperEntity);
+                    sLogic.InsertarData(shipperEntity);
+                    return RedirectToAction("Index");
 
-                Shippers shipperEntity = new Shippers { CompanyName = shippersView.companyName};
-
-                sLogic.insertarData(shipperEntity);
-                return RedirectToAction("Index");
-
+                }
+                else
+                {
+                    return View(shippersView);
+                }
         }
             
             catch (Exception)
@@ -58,22 +83,28 @@ namespace Lab.MVC.Controllers
             }
         }
 
-        public ActionResult Delete(int id)
+        public ActionResult Delete(int shippersId)
         {
 
-            sLogic.Borrar(id);
+           Shippers shipper = sLogic.ObtenerShipperPorId(shippersId);
+            if(shipper != null) 
+            {
+
+                foreach (var order in shipper.Orders)
+                {
+
+                    foreach (var orderD in order.Order_Details)
+                    {
+                        orderLogic.BorrarOrderDetail(orderD.OrderID, orderD.ProductID);
+                    }
+                    orderLogic.BorrarOrders(order.OrderID);
+
+                }
+                sLogic.Borrar(shipper);
+            }
 
             return RedirectToAction("Index");
-        }
-
-        public ActionResult Update()
-        {
-
-            
-
-            return RedirectToAction("Index");
-        }
-
+        }    
 
     }
 }

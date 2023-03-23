@@ -49,6 +49,7 @@ namespace LabNet2023
 
         internal static void MostrarShippers(ShippersLogic shippersLogic)
         {
+
             Console.WriteLine("-Llamado a Shippers y mostrando Id, Company Name: ");
 
             foreach (Shippers shipper in shippersLogic.ObtenerTodo())
@@ -83,26 +84,43 @@ namespace LabNet2023
             Shippers shipperData = new Shippers();
             shipperData.CompanyName = companyName;
             shipperData.Phone = phone;
-            shippersLogic.insertarData(shipperData);
+            shippersLogic.InsertarData(shipperData);
         }
 
         internal static void EliminarShipper(ShippersLogic shippersLogic)
         {
             Console.WriteLine("\nEscriba el id de la compania de transporte que desea eliminar");
+
             int id = (int.Parse(Console.ReadLine()));
-            shippersLogic.Borrar(id);
+            Shippers companiaAEliminar = shippersLogic.ObtenerShipperPorId(id);
+            if (companiaAEliminar != null)
+            {
+                shippersLogic.Borrar(companiaAEliminar);
+            }
+            else
+            {
+                Console.WriteLine("No se encuentra nada para eliminar");
+            }
         }
 
         internal static void ModificarShipper(ShippersLogic shippersLogic)
         {
             Console.WriteLine("\nEscriba el id de la compania de transporte que desea modificar");
             int idUpdate = (int.Parse(Console.ReadLine()));
-            Shippers shipperUpdate = shippersLogic.ObtenerTodo().Find(s => s.ShipperID == idUpdate);
-            Console.WriteLine("Escriba nuevo nombre");
-            shipperUpdate.CompanyName = Console.ReadLine();
-            Console.WriteLine("Escriba nuevo numero de telefono");
-            shipperUpdate.Phone = Console.ReadLine();
-            shippersLogic.updateData(shipperUpdate);
+            Shippers shipperUpdate = shippersLogic.ObtenerShipperPorId(idUpdate);
+            if (shipperUpdate != null) 
+            {
+                Console.WriteLine("Escriba nuevo nombre");
+                shipperUpdate.CompanyName = Console.ReadLine();
+                Console.WriteLine("Escriba nuevo numero de telefono");
+                shipperUpdate.Phone = Console.ReadLine();
+                shippersLogic.Modificar(shipperUpdate);
+            }
+            else
+            {
+                Console.WriteLine("La compañia no existe");
+            }
+
         }
 
     }

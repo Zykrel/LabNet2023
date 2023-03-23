@@ -8,10 +8,10 @@
     <thead>
         <tr>
             <th>
-                ID
+                Nombre de Compañia
             </th>
             <th>
-                Nombre de Compañia
+                Telefono
             </th>
             <th>
                 Eliminar
@@ -26,16 +26,16 @@
         {
             <tr>
                 <td>
-                    @shipper.ID
-                </td>
-                <td>
                     @shipper.companyName
                 </td>
                 <td>
-                    @Html.ActionLink("Eliminar", "Delete", new { id = shipper.ID })
+                    @shipper.phone
                 </td>
                 <td>
-                    @Html.ActionLink("Editar", "Update", "Shippers")
+                    @Html.ActionLink("Eliminar", "Delete", new { shippersId = shipper.ID })
+                </td>
+                <td>
+                    @Html.ActionLink("Editar", "Insert", new {shippersId = shipper.ID })
                 </td>
             </tr>
 

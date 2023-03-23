@@ -17,31 +17,71 @@ namespace Lab.EF.Logic
             return _northwindcontext.Shippers.ToList();
         }
 
-        public void insertarData(Shippers shipper) 
+        public void InsertarData(Shippers shipper) 
         {
-            _northwindcontext.Shippers.Add(shipper);
-            _northwindcontext.SaveChanges();
+            if(shipper.ShipperID != 0) 
+            { 
+              Shippers shipperF =  _northwindcontext.Shippers.Find(shipper.ShipperID);
+                shipperF.CompanyName = shipper.CompanyName;
+                shipperF.Phone = shipper.Phone;
+            }
+            else 
+            { 
+                _northwindcontext.Shippers.AddOrUpdate(shipper);            
+            }
+                _northwindcontext.SaveChanges();
         }
 
 
-        public void Borrar(int id) 
+        public Shippers ObtenerShipperPorId(int id) 
         {
-            Shippers companiaAEliminar = _northwindcontext.Shippers.First(s => s.ShipperID == id);
+           return _northwindcontext.Shippers.Find(id);
 
-            _northwindcontext.Shippers.Remove(companiaAEliminar);
+            
+        }
 
-            _northwindcontext.SaveChanges();
+        public void Borrar(Shippers companiaAEliminar) 
+        {
+
+            try
+            {
+                Shippers shipper = _northwindcontext.Shippers.Find(companiaAEliminar.ShipperID);
+
+                if (shipper != null)
+                {
+                    _northwindcontext.Shippers.Remove(shipper);
+                    _northwindcontext.SaveChanges();
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+           
+
         }
 
 
-        public void updateData(Shippers shipper)
+        public void Modificar(Shippers shipper)
         {
-            Shippers shipperUpdate = _northwindcontext.Shippers.Find(shipper.ShipperID);
 
-            shipperUpdate.CompanyName = shipper.CompanyName;
-            shipperUpdate.Phone = shipper.Phone;
+            try
+            {
+                Shippers shipperUpdate = _northwindcontext.Shippers.Find(shipper.ShipperID);
 
-            _northwindcontext.SaveChanges();
+                shipperUpdate.CompanyName = shipper.CompanyName;
+                shipperUpdate.Phone = shipper.Phone;
+
+                _northwindcontext.SaveChanges();
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            
         }
     }
 }
