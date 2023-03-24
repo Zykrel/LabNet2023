@@ -1,8 +1,5 @@
 using Lab.EF.Entities;
-using System;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity;
-using System.Linq;
 
 namespace Lab.EF.Data
 {
