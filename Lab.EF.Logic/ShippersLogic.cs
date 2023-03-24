@@ -17,16 +17,9 @@ namespace Lab.EF.Logic
 
         public void InsertarData(Shippers shipper) 
         {
-            if(shipper.ShipperID != 0) 
-            { 
-              Shippers shipperF =  _northwindcontext.Shippers.Find(shipper.ShipperID);
-                shipperF.CompanyName = shipper.CompanyName;
-                shipperF.Phone = shipper.Phone;
-            }
-            else 
-            { 
-                _northwindcontext.Shippers.AddOrUpdate(shipper);            
-            }
+
+                _northwindcontext.Shippers.Add(shipper);            
+            
                 _northwindcontext.SaveChanges();
         }
 

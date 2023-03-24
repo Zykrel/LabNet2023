@@ -63,7 +63,15 @@ namespace Lab.MVC.Controllers
             try
             {
                     Shippers shipperEntity = new Shippers { ShipperID = shippersView.ID, CompanyName = shippersView.companyName, Phone = shippersView.phone };
+                if(shipperEntity.ShipperID != 0) 
+                {
+                    sLogic.Modificar(shipperEntity);
+                }
+                else
+                {
                     sLogic.InsertarData(shipperEntity);
+
+                }    
                     return RedirectToAction("Index");
 
             }catch(Exception) 
