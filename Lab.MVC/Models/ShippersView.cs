@@ -14,10 +14,10 @@ namespace Lab.MVC.Models
         
         public int ID { get; set; }        
         
-        [Required(ErrorMessage = "Campo Requerido")]
+        [Required(ErrorMessage = "  Campo Requerido!")]
         public string companyName { get; set; }
 
-        [Required(ErrorMessage = "Campo Requerido")]
+        [Required(ErrorMessage = "  Campo Requerido!")]
         public string phone { get; set; }
     }
 }

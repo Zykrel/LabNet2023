@@ -1,20 +1,35 @@
 ﻿@model  Lab.MVC.Models.ShippersView
 
 @{
-    ViewBag.Title = "Insertar Compañia";
+    ViewBag.Title = "Agregar Compañia";
 }
 
-<h1 class="text-center mb-3">Agregar Compañia</h1>
+<h1 class="text-center mt-5 mb-3">Agregar Compañia</h1>
 
 @using (Html.BeginForm("Insert", "Shippers", FormMethod.Post))
 {
-    <div class="mx-4 mt-5">
-        @Html.HiddenFor(sv => sv.ID)
-        <label>Nombre de Compañia:  </label> @Html.TextBoxFor(sv => sv.companyName)@Html.ValidationMessageFor(sv => sv.companyName) 
-        <label>Telefono:  </label> @Html.TextBoxFor(sv => sv.phone)@Html.ValidationMessageFor(sv => sv.phone)
-        <input type="submit" class=" btn btn-outline-success mx-4" value="Subir cambios" />
-
-
+    <div class="btn btn-outline-info">
+        @Html.ActionLink("Volver", "Index", "Shippers")
     </div>
+<div class="row">
+    <div class="col-12 mt-3">
+        @Html.HiddenFor(sv => sv.ID)
+        <label class="mx-2"><strong>Nombre de la Compañia: </strong></label> @Html.TextBoxFor(sv => sv.companyName)@Html.ValidationMessageFor(sv => sv.companyName)
+    </div>
+</div>
+<div class="row">
+    <div class="col-12 mt-3 mb-5">
+        <label class="mx-2"><strong>Telefono de la comapañia: </strong></label>@Html.TextBoxFor(sv => sv.phone)@Html.ValidationMessageFor(sv => sv.phone)
+        <input type="submit" class=" btn btn-outline-success mb-4 mx-4" value="Subir cambios" />
+    </div>
+
+
+</div>
+
+
+
+
+
+
 
 }

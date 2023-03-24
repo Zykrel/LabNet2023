@@ -15,14 +15,14 @@ namespace Lab.MVC.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "Trabajo de MVC";
 
             return View();
         }
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "Pagina de Contacto";
 
             return View();
         }
