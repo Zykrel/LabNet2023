@@ -128,11 +128,16 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PokeApiController.cs" />
     <Compile Include="Controllers\ShippersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\PokemonListView.cs" />
+    <Compile Include="Models\PokemonResultView.cs" />
+    <Compile Include="Models\PokemonView.cs" />
     <Compile Include="Models\ShippersView.cs" />
+    <Compile Include="Models\SpritesView.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -214,6 +219,8 @@
     <Content Include="Views\Shippers\Insert.cshtml" />
     <Content Include="Views\Error\Index.cshtml" />
     <Content Include="Views\Shippers\Update.cshtml" />
+    <Content Include="Views\PokeApi\Index.cshtml" />
+    <Content Include="Views\PokeApi\Detalles.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

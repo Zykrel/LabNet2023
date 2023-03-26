@@ -1,0 +1,16 @@
+﻿@model Lab.MVC.Models.PokemonListView
+@{
+    ViewBag.Title = "PokeApi";
+
+}
+
+<h1 class="text-center">PokeApi</h1>
+@foreach(Lab.MVC.Models.PokemonResultView pokemonResult in Model.results)
+            {
+    <div>
+
+               <p> @pokemonResult.name </p>
+               @Html.ActionLink("Ver Detalles", "Detalles", new {url = pokemonResult.url })
+    </div>
+            }
+<hr />

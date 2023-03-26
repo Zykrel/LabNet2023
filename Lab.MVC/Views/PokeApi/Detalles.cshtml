@@ -1,0 +1,26 @@
+﻿@model Lab.MVC.Models.PokemonView
+@{
+    ViewBag.Title = "Detalles";
+
+}
+
+<h1 class="text-center mt-3">Detalles</h1>
+<div class="row">
+    <div class="col-12">
+        <p class="text-center mt-3"><strong>Nombre: @Model.name</strong></p>
+        <p class="text-center mt-3"><strong>Orden: @Model.order</strong></p>
+
+    </div>
+</div>
+<div class="row">
+    <div class="col-12 text-center">
+        <p>Normal</p>
+        <img src="@Model.sprites.front_default" />
+    </div>
+</div>
+<div class="row">
+    <div class="col-12 text-center mb-3">
+        <p>Shiny:</p>
+        <img src="@Model.sprites.front_shiny" />
+    </div>
+</div>
