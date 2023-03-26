@@ -61,12 +61,13 @@ namespace Lab.EF.Logic
             try
             {
                 Shippers shipperUpdate = _northwindcontext.Shippers.Find(shipper.ShipperID);
+                if(shipperUpdate != null) 
+                {
+                    shipperUpdate.CompanyName = shipper.CompanyName;
+                    shipperUpdate.Phone = shipper.Phone;
 
-                shipperUpdate.CompanyName = shipper.CompanyName;
-                shipperUpdate.Phone = shipper.Phone;
-
-                _northwindcontext.SaveChanges();
-
+                    _northwindcontext.SaveChanges();
+                }               
             }
             catch (Exception ex)
             {

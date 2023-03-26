@@ -10,6 +10,9 @@ namespace Lab.MVC.Models
         public int count { get; set; }
         public string next { get; set; }
         public string previous { get; set; }
+
+
+
         public List<PokemonResultView> results { get; set; } 
         public PokemonListView() { }
     }

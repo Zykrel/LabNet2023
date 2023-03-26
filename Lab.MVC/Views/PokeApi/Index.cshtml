@@ -4,13 +4,29 @@
 
 }
 
-<h1 class="text-center">PokeApi</h1>
-@foreach(Lab.MVC.Models.PokemonResultView pokemonResult in Model.results)
-            {
-    <div>
-
-               <p> @pokemonResult.name </p>
-               @Html.ActionLink("Ver Detalles", "Detalles", new {url = pokemonResult.url })
+<h1 class="text-center h1 mb-4">PokeApi</h1>
+@foreach (Lab.MVC.Models.PokemonResultView pokemonResult in Model.results)
+{
+    <div class="d-flex justify-content-between mb-2">
+        <span><strong>@pokemonResult.name.ToUpper()</strong></span>
+        @Html.ActionLink("Ver Detalles", "Detalles", new { url = pokemonResult.url })
     </div>
-            }
-<hr />
+}
+<div class="d-flex mx-5">
+
+    @if (Model.previous != null)
+    {
+        <div class="btn btn-outline-info my-4 me-auto">
+            @Html.ActionLink("Anterior", "Index", new { url = Model.previous })
+        </div>
+}
+
+    @if (Model.next != null)
+    {
+        <div class="btn btn-outline-info my-4 ms-auto">
+            @Html.ActionLink("Siguiente", "Index", new { url = Model.next })
+        </div>
+    }
+</div>
+
+

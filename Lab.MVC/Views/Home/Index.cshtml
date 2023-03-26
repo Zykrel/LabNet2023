@@ -3,9 +3,11 @@
 }
 
 <div class="jumbotron">
-    <h1 class="text-center h1 mt-3">Practica 6 MVC</h1>
+    <h1 class="text-center h1 my-3">Practica 7 WebApi</h1>
     <p class="text-center mt-2"><strong>Trabajo de Modelo Vista Controlador</strong></p>
-    <div class="btn btn-outline-info d-flex justify-content-center mt-3 mb-5">
-        @Html.ActionLink("Ir a Shippers", "Index", "Shippers")
+    <p class="text-center mt-2"><strong>Consumir una API Publica y mostrar el resultado en algún lado de la web.</strong></p>
+    <div class="d-flex justify-content-center mt-3 mb-5">
+        @Html.ActionLink("Ir a Shippers", "Index", "Shippers", new { area = "" }, new { @class = "btn btn-primary my-3 mx-2" })
+        @Html.ActionLink("Ir a PokeApi", "Index", "PokeApi", new { area = "" }, new { @class = "btn btn-primary my-3 mx-2" })
     </div>
 </div>

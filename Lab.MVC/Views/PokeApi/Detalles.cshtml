@@ -5,22 +5,22 @@
 }
 
 <h1 class="text-center mt-3">Detalles</h1>
+@Html.ActionLink("Volver al inicio", "Index")
 <div class="row">
     <div class="col-12">
-        <p class="text-center mt-3"><strong>Nombre: @Model.name</strong></p>
-        <p class="text-center mt-3"><strong>Orden: @Model.order</strong></p>
-
+        <p class="text-center mt-3"><strong>@Model.name.ToUpper()</strong></p>
+        <p class="text-center mt-3"><strong>Pokedex Orden: #@Model.order</strong></p>
     </div>
 </div>
 <div class="row">
     <div class="col-12 text-center">
-        <p>Normal</p>
+        <p><strong>Sprite Normal: </strong></p>
         <img src="@Model.sprites.front_default" />
     </div>
 </div>
 <div class="row">
-    <div class="col-12 text-center mb-3">
-        <p>Shiny:</p>
+    <div class="col-12 text-center">
+        <p><strong>Sprite Shiny:</strong></p>
         <img src="@Model.sprites.front_shiny" />
     </div>
 </div>

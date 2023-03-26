@@ -14,11 +14,10 @@ namespace Lab.MVC.Controllers
     {
         // GET: PokeApi
         private HttpClient client = new HttpClient();
-        public async Task<ActionResult> Index()
+        public async Task<ActionResult> Index(string url= "https://pokeapi.co/api/v2/pokemon/")
         {
-
            PokemonListView pokemonList = null;
-           HttpResponseMessage httpResponseMessage = await client.GetAsync("https://pokeapi.co/api/v2/pokemon/");
+           HttpResponseMessage httpResponseMessage = await client.GetAsync(url);
 
             
 
@@ -33,11 +32,6 @@ namespace Lab.MVC.Controllers
 
         public async Task<ActionResult> Detalles(string url)
         {
-            //Incializar Pokemon (clase que vas a crear)
-            //Pegarle a la URL
-            //verificar StatusCode
-            //llenar objetio pokemon con la respuesta
-            //retornar view con el (pokemon)
             PokemonView pokemonView = null;
 
             HttpResponseMessage httpResponseMessage= await client.GetAsync(url);

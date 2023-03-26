@@ -15,12 +15,5 @@ namespace Lab.MVC.Controllers
 
             return View();
         }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Pagina de Contacto";
-
-            return View();
-        }
     }
 }
