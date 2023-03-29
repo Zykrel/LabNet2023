@@ -1,8 +1,8 @@
 <h2 class="text-center mt-3">Crear Shipper</h2>
     <form [formGroup]="shipperForm" (ngSubmit)="onSubmit()">
         <div class="row d-flex justify-content-center">
-            <div class="col-lg-6">
-                <div class=" mt-2 mb-3 ">
+            <div class="col-6">
+                <div class=" mt-2 mb-3">
                     <span for="companyName" class="form-label"><strong>Ingrese el nombre de la compañia: </strong></span>
                     <input type="text" formControlName="companyName" class="form-control mt-3" id="companyName" placeholder="Ingrese nombre de la compañia">
                     <div *ngIf="submitted && validatorArray.companyName.errors" class="text-danger">
@@ -14,7 +14,7 @@
             </div>
         </div>
         <div class="row d-flex justify-content-center mt-3" >
-            <div class="col-lg-6">
+            <div class="col-6">
                 <div class="mb-3">
                     <span for="phone" class="form-label"><strong>Ingrese el número de teléfono: </strong></span>
                     <input type="text" formControlName="phone" class="form-control mt-3" id="phone" placeholder="Ingrese el número de teléfono">
