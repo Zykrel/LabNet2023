@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { ShippersService } from 'src/app/data/services/shippers.service';
+import { IShippers } from './../../../../data/interfaces/shippers';
+import { Router } from '@angular/router';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-shipperscreate',
@@ -9,8 +13,8 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 export class ShipperscreateComponent implements OnInit {
   submitted: boolean = false;
   shipperForm!: FormGroup;
-
-  constructor(private formBuilder: FormBuilder) { }
+  error: boolean = false;
+  constructor(private formBuilder: FormBuilder, private shippersService: ShippersService, private router: Router) { }
 
   ngOnInit(): void {
     this.shipperForm = this.formBuilder.group({
@@ -19,16 +23,29 @@ export class ShipperscreateComponent implements OnInit {
     })
   }
 
-  onSubmit(){
+  onSubmit() {
     this.submitted = true;
-    if(this.shipperForm.invalid){
-      console.log(this.shipperForm.controls)
+    if (this.shipperForm.invalid) {
       return;
     }
-    console.log(this.shipperForm.value);
+    const shipperCreate: IShippers = { companyName: this.shipperForm.value.companyName, phone: this.shipperForm.value.phone }
+    this.shippersService.create(shipperCreate).subscribe({
+      next: (resp) => {
+        this.router.navigate(["/shippers"])
+      },
+      error: (e) => {
+        this.error = true;
+      }
+    })
+
   }
 
-  get validatorArray(){
+  get validatorArray() {
     return this.shipperForm.controls
+  }
+
+  onReset(){
+    this.submitted = false;
+    this.shipperForm.reset();
   }
 }

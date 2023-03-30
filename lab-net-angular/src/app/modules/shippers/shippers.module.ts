@@ -4,7 +4,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { ShipperslistComponent } from './components/shipperslist/shipperslist.component';
 import { ShipperscreateComponent } from './components/shipperscreate/shipperscreate.component';
 import { ShippersupdateComponent } from './components/shippersupdate/shippersupdate.component';
-import { ShippersdeleteComponent } from './components/shippersdelete/shippersdelete.component';
 import { ReactiveFormsModule } from '@angular/forms';
 
 
@@ -15,19 +14,19 @@ export const routes: Routes = [{
   path: 'create',
   component: ShipperscreateComponent
 }, {
-  path: 'update',
+  path: 'update/:id',
   component: ShippersupdateComponent
 }, {
-  path: 'delete',
-  component: ShippersdeleteComponent
+  path: '**',
+  pathMatch: 'full',
+  redirectTo: ''
 }]
 
 @NgModule({
   declarations: [
     ShipperslistComponent,
     ShipperscreateComponent,
-    ShippersupdateComponent,
-    ShippersdeleteComponent
+    ShippersupdateComponent
   ],
   imports: [
     CommonModule,

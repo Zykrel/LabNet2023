@@ -6,11 +6,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Web.Http;
+using System.Web.Http.Cors;
 using System.Web.Http.Description;
 using HttpDeleteAttribute = System.Web.Http.HttpDeleteAttribute;
 
 namespace Lab.WebApi.Controllers
 {
+    [EnableCors(origins: "http://localhost:4200", headers:"*", methods:"*")]
     public class ShippersController : ApiController
     {
         OrdersLogic orderLogic = new OrdersLogic();

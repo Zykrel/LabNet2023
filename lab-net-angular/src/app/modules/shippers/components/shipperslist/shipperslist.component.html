@@ -1,1 +1,21 @@
-<p>shipperslist works!</p>
+<table class="table table-bordered my-3">
+    <thead>
+        <tr>
+            <th scope="col">Nombre de compañía</th>
+            <th scope="col">Teléfono</th>
+            <th scope="col">Modificar</th>
+            <th scope="col">Eliminar</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let shipper of shippersList">
+            <td>{{shipper["companyName"]}}</td>
+            <td>{{shipper["phone"]}}</td>
+            <td><a class="nav-link" routerLink="/shippers/update/{{shipper.ID}}">Modificar Shipper</a></td>
+            <td class="cursor-pointer" (click)="delete(shipper.ID)">Eliminar</td>
+        </tr>
+    </tbody>
+</table>
+<div>
+    <p class="text-danger">{{message}}</p>
+</div>

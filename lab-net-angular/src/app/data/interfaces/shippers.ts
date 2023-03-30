@@ -1,5 +1,5 @@
 export interface IShippers {
-        ID: number;              
+        ID?: number;              
         companyName: string; 
         phone: string;
 }
