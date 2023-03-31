@@ -4,8 +4,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { ShipperslistComponent } from './components/shipperslist/shipperslist.component';
 import { ShipperscreateComponent } from './components/shipperscreate/shipperscreate.component';
 import { ShippersupdateComponent } from './components/shippersupdate/shippersupdate.component';
-import { ReactiveFormsModule } from '@angular/forms';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SharedModule } from 'src/app/shared/shared.module';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 export const routes: Routes = [{
   path: '',
@@ -29,9 +30,12 @@ export const routes: Routes = [{
     ShippersupdateComponent
   ],
   imports: [
-    CommonModule,
+  CommonModule,
     RouterModule.forChild(routes),
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SharedModule,
+    FormsModule,
+    FontAwesomeModule
   ]
 })
 export class ShippersModule { }

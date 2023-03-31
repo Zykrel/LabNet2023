@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { RouterModule } from '@angular/router';
+import { FiltershipperPipe } from './pipes/filtershipper.pipe';
 
 
 
@@ -10,15 +11,17 @@ import { RouterModule } from '@angular/router';
 @NgModule({
   declarations: [
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    FiltershipperPipe
   ],
   imports: [
-  CommonModule,
+CommonModule,
     RouterModule
   ],
   exports: [
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    FiltershipperPipe
   ]
 })
 export class SharedModule { }

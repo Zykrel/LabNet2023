@@ -5,3 +5,8 @@
 .cursor-pointer:hover{
     font-weight: bolder;
 }
+
+
+.size-td{
+    width: 5px;
+}
